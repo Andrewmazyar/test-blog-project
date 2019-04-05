@@ -145,7 +145,12 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    pass
+    a = {}
+    c = 97
+    for i in range (1, 27):
+        a[i] = chr(c)
+        c += 1
+    return a
 
 
 def simple_sort(data: List[int]) -> List[list]:
