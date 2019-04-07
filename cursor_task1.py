@@ -31,7 +31,7 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    return type(first) is type(second)
+    return first is second
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -49,7 +49,7 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         Product of elements
     """
     if isinstance(first_value, int) and isinstance(second_value, int):
-        return first_value + second_value
+        return first_value * second_value
     else:
         raise ValueError
 
@@ -131,10 +131,11 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
+    l = []
     for i in data:
-        if i < 0:
-            data.remove(i)
-        return data
+        if i >= 0:
+            l.append(i)
+    return l
 
 
 def alphabet() -> dict:
@@ -162,13 +163,10 @@ def simple_sort(data: List[int]) -> List[list]:
     Returns:
 
     """
-
-    for x in data:
-        for i in range(len(data)+1):
-            if x < data[i]:
-                data.insert(data(i), x)
-            else:
-                data.append(x)
+    for i in range(len(data)):
+        for j in range(len(data) - i - 1):
+            if data[j] > data[j + 1]:
+                data[j], data[j + 1] = data[j + 1], data[j]
     return data
 
 
