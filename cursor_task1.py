@@ -116,7 +116,7 @@ def some_loop_exercise() -> list:
     """
     x = []
     for i in range(13):
-        if int(i) == 6 or int(i) == 7:
+        if i == 6 or i == 7:
             continue
         x.append(i)
     return x
@@ -164,7 +164,7 @@ def simple_sort(data: List[int]) -> List[list]:
 
     """
     for i in range(len(data)):
-        for j in range(len(data) - i - 1):
+        for j in range(len(data) - 1):
             if data[j] > data[j + 1]:
                 data[j], data[j + 1] = data[j + 1], data[j]
     return data
